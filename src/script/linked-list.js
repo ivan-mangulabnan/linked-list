@@ -16,7 +16,7 @@ export class LinkedList {
       return;
     }
 
-    this.head = node;
+    this.#head = node;
   }
 
   prepend (value) {
