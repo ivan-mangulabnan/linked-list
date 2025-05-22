@@ -48,6 +48,16 @@ export class LinkedList {
   get head () {
     return this.#head;
   }
+
+  get tail () {
+    let temp = this.head;
+
+    while(temp.next) {
+      temp = temp.next;
+    }
+
+    return temp;
+  }
 }
 
 class Node {
