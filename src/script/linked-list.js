@@ -46,7 +46,6 @@ export class LinkedList {
   }
 
   get head () {
-    if (!this.#head) return "empty";
     return this.#head;
   }
 
@@ -86,6 +85,13 @@ export class LinkedList {
     }
 
     this.#head = null;
+  }
+
+  contains (value) {
+    if (!this.head) return "No item yet";
+    let temp = this.head;
+
+    console.log("comes in even if empty");
   }
 }
 
