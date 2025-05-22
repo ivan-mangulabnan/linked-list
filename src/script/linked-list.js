@@ -1,5 +1,23 @@
 export class LinkedList {
-  #head;
+  #head = null;
+
+  append(value) {
+    let node = new Node();
+    node.value = value;
+
+    if (this.#head) {
+      let temp = this.#head;
+
+      while(temp.next) {
+        temp = temp.next;
+      }
+
+      temp.next = node;
+      return;
+    }
+
+    this.head = node;
+  }
 
   prepend(value) {
     let node = new Node();
