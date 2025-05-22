@@ -1,7 +1,7 @@
 export class LinkedList {
   #head = null;
 
-  append(value) {
+  append (value) {
     let node = new Node();
     node.value = value;
 
@@ -19,7 +19,7 @@ export class LinkedList {
     this.head = node;
   }
 
-  prepend(value) {
+  prepend (value) {
     let node = new Node();
     node.value = value;
 
@@ -31,6 +31,18 @@ export class LinkedList {
     let temp = this.#head;
     node.next = temp;
     this.#head = node;
+  }
+
+  get size () {
+    let count = 0;
+    let temp = this.#head;
+    
+    while(temp) {
+      temp = temp.next;
+      count++;
+    }
+    
+    return count;
   }
 
   get head () {
