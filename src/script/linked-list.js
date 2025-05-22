@@ -46,6 +46,7 @@ export class LinkedList {
   }
 
   get head () {
+    if (!this.#head) return "empty";
     return this.#head;
   }
 
