@@ -116,6 +116,23 @@ export class LinkedList {
     
     return null;
   }
+
+  toString () {
+    if (!this.head) return "null";
+    let temp = this.head;
+    let stringify = "";
+
+    while(temp) {
+      if (!temp.next) {
+        stringify += ` ( ${temp.value} ) -> null`;
+        return stringify;
+      }
+      stringify += ` ( ${temp.value} ) ->`;
+      temp = temp.next;
+    }
+
+    return stringify;
+  }
 }
 
 class Node {
