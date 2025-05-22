@@ -100,6 +100,22 @@ export class LinkedList {
 
     return false;
   }
+
+  find (value) {
+    if (!this.head) return null;
+    let temp = this.head;
+    let index = 0;
+
+    while(temp) {
+      if (temp.value === value) {
+        return index;
+      }
+      temp = temp.next;
+      index++;
+    }
+    
+    return null;
+  }
 }
 
 class Node {
