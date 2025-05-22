@@ -88,10 +88,17 @@ export class LinkedList {
   }
 
   contains (value) {
-    if (!this.head) return "No item yet";
+    if (!this.head) return false;
     let temp = this.head;
 
-    console.log("comes in even if empty");
+    while(temp) {
+      if (temp.value === value) {
+        return true;
+      }
+      temp = temp.next;
+    }
+
+    return false;
   }
 }
 
