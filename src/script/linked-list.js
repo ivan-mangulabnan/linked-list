@@ -58,6 +58,34 @@ export class LinkedList {
 
     return temp;
   }
+
+  at (index) {
+    let i = 0;
+    let temp = this.head;
+
+    while(i < index && temp.next) {
+      i++;
+      temp = temp.next;
+    }
+
+    if (index > i) return "Provided index doesn't match the length of the list";
+    return temp;
+  }
+
+  pop () {
+    if (!this.head) return;
+    let temp = this.head;
+
+    while(temp.next) {
+      if (!temp.next.next) {
+        temp.next = null;
+        return
+      }
+      temp = temp.next;
+    }
+
+    this.#head = null;
+  }
 }
 
 class Node {
