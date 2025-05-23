@@ -161,6 +161,30 @@ export class LinkedList {
     node.next = temp.next;
     temp.next = node;
   }
+
+  removeAt (index) {
+    let temp = this.head;
+    if (!temp) return;
+
+    if (!temp.next) {
+      this.pop();
+      return;
+    }
+
+    let i = 0;
+
+    while(temp && i < index - 1) {
+      i++;
+      temp = temp.next;
+    }
+
+    if (!temp) {
+      this.pop();
+      return;
+    }
+
+    temp.next = temp.next.next;
+  }
 }
 
 class Node {
