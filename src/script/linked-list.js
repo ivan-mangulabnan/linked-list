@@ -133,6 +133,34 @@ export class LinkedList {
 
     return stringify;
   }
+
+  // Extra Credit
+
+  insertAt (value, index) {
+    let node = new Node();
+    node.value = value;
+
+    if (index === 0) {
+      this.prepend(value);
+      return;
+    }
+
+    let temp = this.head;
+    let i = 0;
+
+    while(temp && i < index - 1) {
+      i++;
+      temp = temp.next;
+    }
+
+    if (!temp) {
+      this.append(value);
+      return;
+    }
+
+    node.next = temp.next;
+    temp.next = node;
+  }
 }
 
 class Node {
